@@ -34,10 +34,13 @@ if (!isNaN(km)) {
         let discountedPrice ="";
         if(age < 18) {
             discountedPrice = basePrice - discount20;
+            document.getElementById("discount").innerHTML = "Hai diritto a uno sconto del 20%";
         } else if (age > 65) {
             discountedPrice = basePrice - discount40;
+            document.getElementById("discount").innerHTML = "Hai diritto a uno sconto del 40%";
         } else {
             discountedPrice = basePrice;
+            document.getElementById("discount").innerHTML = "Non hai diritto a uno sconto aggiuntivo";
         }
         console.log(discountedPrice);
 
@@ -47,8 +50,12 @@ if (!isNaN(km)) {
         // OUTPUT
         // Stampo il messaggio
         console.log(price);
-        const message = "Il prezzo del tuo biglietto è: ";
+        const message = "Il prezzo del tuo biglietto è di: ";
         document.getElementById("train-price").innerHTML = message + price + " €";
+        const distance = "La lunghezza del tuo viaggio è di: "
+        document.getElementById("distance").innerHTML = distance + km + " km";
+        const ageUser = "L'età del passeggero è di: ";
+        document.getElementById("age-user").innerHTML = ageUser + age + " anni";
     } else {
         console.log("L'età inserita non è valida. Ricaricare la pagina.")
         document.getElementById("train-price").innerHTML = "L'età inserita non è valida. Ricaricare la pagina."
