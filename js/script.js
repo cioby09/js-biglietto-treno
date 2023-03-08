@@ -20,16 +20,21 @@ console.log(discount20, discount40);
 //      Applico uno sconto del 40%
 // Altrimenti
 //      Il prezzo di base rimane invariato
-let price ="";
+let discountedPrice ="";
 if(age < 18) {
-    price = basePrice - discount20;
+    discountedPrice = basePrice - discount20;
 } else if (age > 65) {
-    price = basePrice - discount40;
+    discountedPrice = basePrice - discount40;
 } else {
-    price = basePrice;
+    discountedPrice = basePrice;
 }
+console.log(discountedPrice);
+
+// Arrotondiamo il prezzo ad un massimo di due decimali
+let price = discountedPrice.toFixed(2);
 
 // OUTPUT
 // Stampo il messaggio
 console.log(price);
-document.getElementById("price").innerHTML = price;
+const message = "Il prezzo del tuo biglietto è: ";
+document.getElementById("price").innerHTML = message + price + " €";
